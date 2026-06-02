@@ -94,7 +94,7 @@ if ((!argv$bidirect && fwd_done) || (argv$bidirect && fwd_done && rev_done)) {
 #     `type` controls whether the resulting frame is treated as exposure/outcome
 #     by TwoSampleMR — orthogonal to which GWAS the columns came from.
 fmt_exp_side <- function(gwas, type) {
-    format_data(gwas,
+    format_data(data.frame(gwas),
         snp_col           = argv$esnp,  beta_col          = argv$ebeta,
         se_col            = argv$ese,   chr_col           = argv$echr,
         pos_col           = argv$epos,  effect_allele_col = argv$eea,
@@ -102,7 +102,7 @@ fmt_exp_side <- function(gwas, type) {
         pval_col          = argv$epval, type              = type)
 }
 fmt_otc_side <- function(gwas, type) {
-    format_data(gwas,
+    format_data(data.frame(gwas),
         snp_col           = argv$osnp,  beta_col          = argv$obeta,
         se_col            = argv$ose,   chr_col           = argv$ochr,
         pos_col           = argv$opos,  effect_allele_col = argv$oea,
